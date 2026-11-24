@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 string connectionString = builder.Configuration.GetConnectionString("SqlBlaBlaMar")!;
 builder.Services.AddDbContext<BlaBlaMarContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddScoped<RepositoryEventos>();
+builder.Services.AddScoped<RepositoryCaracteristicas>();
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
